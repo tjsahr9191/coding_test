@@ -33,7 +33,22 @@ def bubblesort_improve_2():
         k = last
 
 
-bubblesort_improve_2()
+def double_direction_bubble_sort():
+    left = 0
+    right = n - 1
+    last = right
+    while left < right:
+        for j in range(right, left, -1):
+            if inputs[j - 1] > inputs[j]:
+                inputs[j - 1], inputs[j] = inputs[j], inputs[j - 1]
+                last = j
+        left = last
+
+        for k in range(left, right):
+            if inputs[k] > inputs[k + 1]:
+                inputs[k], inputs[k + 1] = inputs[k + 1], inputs[k]
+                last = k
+        right = last
 
 print(inputs)
 
